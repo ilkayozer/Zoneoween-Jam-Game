@@ -102,4 +102,6 @@ MonoBehaviour:
   - I must be with my comrades. Take me to the 22nd floor.
   - You don't look so well. You sure?
   - God forgot us, but I will not.
+  - I appreciate it.
   floor: 22
+  isEvil: 0

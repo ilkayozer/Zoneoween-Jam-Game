@@ -102,4 +102,6 @@ MonoBehaviour:
   - "This is n\xF6t Valh\xF6ll. Take me t\xF6 the 81st fl\xF6\xF6r. I have a feeling."
   - What feeling?
   - The divine hath called me.
+  - You have my thanks.
   floor: 81
+  isEvil: 0

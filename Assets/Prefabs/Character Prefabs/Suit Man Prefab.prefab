@@ -102,4 +102,6 @@ MonoBehaviour:
   - I think there was a mistake. I should be in 25th.
   - Are you a man of faith?
   - No. Not really.
+  - Okay.
   floor: 25
+  isEvil: 0

@@ -74,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 1484050171
   m_SortingLayer: -4
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 8b618c9150b2aed4d9647c82457d8029, type: 3}
+  m_Sprite: {fileID: 21300000, guid: e6610025bcf1b5846bc7c5a4409f8a2e, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -102,5 +102,6 @@ MonoBehaviour:
   - Did you see my son? He was supposed to be on the 14th floor.
   - You don't look so sad. Why?
   - I'm VERY, VERY worried.
+  - ...
   floor: 14
   isEvil: 1

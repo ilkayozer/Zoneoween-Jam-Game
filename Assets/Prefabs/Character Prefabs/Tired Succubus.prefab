@@ -102,4 +102,6 @@ MonoBehaviour:
   - Hello. I know I look like a demon. But can you take me to the 85th.
   - Why would I risk it?
   - You can just ignore me if you want. I'm exhausted...
+  - I am grateful.
   floor: 85
+  isEvil: 0

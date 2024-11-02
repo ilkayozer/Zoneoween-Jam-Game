@@ -102,4 +102,6 @@ MonoBehaviour:
   - Would you take me to the 67th? I could make a godly latte for you.
   - What happened to your hand?
   - Just a workplace accident.
+  - Cool.
   floor: 67
+  isEvil: 0

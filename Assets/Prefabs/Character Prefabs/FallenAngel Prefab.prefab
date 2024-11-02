@@ -102,5 +102,6 @@ MonoBehaviour:
   - Hello, I must go to the 8th floor. They're waiting for me.
   - Who is waiting?
   - The one above all.
+  - Pity.
   floor: 8
   isEvil: 1

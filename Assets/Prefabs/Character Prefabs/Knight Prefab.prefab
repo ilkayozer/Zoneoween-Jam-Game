@@ -102,4 +102,6 @@ MonoBehaviour:
   - How fare thee, kind sire? May you lift me to the 202nd floor?
   - And your reason to go there would be?
   - To meet with my holy brothers before god almighty.
+  - Thank thou brother.
   floor: 202
+  isEvil: 0

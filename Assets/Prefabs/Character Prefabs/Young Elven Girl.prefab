@@ -102,4 +102,6 @@ MonoBehaviour:
   - I-I don't know where I am. I want my mother...
   - Where was your mother?
   - S-she was on the 15th floor...
+  - T-thank you!
   floor: 15
+  isEvil: 0

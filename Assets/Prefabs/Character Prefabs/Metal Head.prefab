@@ -102,4 +102,6 @@ MonoBehaviour:
   - Hello, don't you think we need justice for all?
   - Yeah sure. Are you a rockstar or something?
   - Hell yeah! About to give a concert on the 66th floor. Can you take me there?
+  - Yeahh!!
   floor: 66
+  isEvil: 0

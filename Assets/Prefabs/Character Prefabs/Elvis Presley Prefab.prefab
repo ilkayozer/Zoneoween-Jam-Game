@@ -102,5 +102,6 @@ MonoBehaviour:
   - "Hello, can you take me to nothin\u2019 but the 9th floor?"
   - Are you a believer?
   - "Somethin\u2019 like that, yeah."
+  - Not exactly.
   floor: 9
   isEvil: 1

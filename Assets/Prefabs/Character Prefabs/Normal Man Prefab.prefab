@@ -102,4 +102,6 @@ MonoBehaviour:
   - Hello. I was supposed to be on the 59th floor.
   - Why are you here?
   - I don't know. Maybe God made a mistake.
+  - Thanks.
   floor: 59
+  isEvil: 0

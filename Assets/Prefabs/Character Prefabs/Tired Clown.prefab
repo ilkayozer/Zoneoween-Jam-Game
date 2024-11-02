@@ -102,4 +102,6 @@ MonoBehaviour:
   - Can you take me to the 31st floor?
   - Let me check your body first.
   - For god's sake, are you a perv or something?
+  - You're a weird one.
   floor: 31
+  isEvil: 0

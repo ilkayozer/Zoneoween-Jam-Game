@@ -102,4 +102,6 @@ MonoBehaviour:
   - Ahoy matey! Can you drop me off to the 7s?
   - Do you feel remorse for what you did?
   - For heaven's sake. What else could I do?
+  - I thank ye.
   floor: 7
+  isEvil: 0

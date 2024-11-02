@@ -102,4 +102,6 @@ MonoBehaviour:
   - Meow meow meow. 13th meow.
   - What the hell?
   - Meow meow.
+  - Meow.
   floor: 13
+  isEvil: 0
