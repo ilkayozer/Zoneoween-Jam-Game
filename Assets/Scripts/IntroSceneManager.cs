@@ -31,18 +31,31 @@ public class IntroSceneManager : MonoBehaviour
         yield return new WaitForSeconds(duration);
         textManager.ShowNextDialog();
 
-        while (!textManager.isClicked)
+        /*while (!textManager.isClicked)
         {
             yield return new WaitForSeconds(1);
-        }
+        }*/
 
-        yield return new WaitForSeconds(textManager.GetTypeingTime(1));
+        yield return new WaitForSeconds(textManager.GetTypeingTime(0)+2f);
+        textManager.ClearText();
 
         textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(1)+1f);
+        textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(2) + 0.5f);
+        textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(3) + 0.5f);
+        textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(4) + 0.5f);
+        textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(5) + 0.5f);
+        textManager.ClearText();
 
-        yield return new WaitForSeconds(textManager.GetTypeingTime(2));
-
+        textManager.ShowNextDialog();
+        yield return new WaitForSeconds(textManager.GetTypeingTime(6) + 1.5f);
         doorManager.Close();
+
+        textManager.ClearText();
         //yield return new WaitForSeconds(duration);
 
         //textManager.ShowNextDialog();

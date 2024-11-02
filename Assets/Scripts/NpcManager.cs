@@ -24,7 +24,7 @@ public class NpcManager : MonoBehaviour
         if (index < dialogs.Length)
             if (index == 0)
             {
-                return dialogs[index] += npcName + "\n\n";
+                return dialogs[index] + "\n\n";
             }
             return dialogs[index] + "\n\n";
         return string.Empty;

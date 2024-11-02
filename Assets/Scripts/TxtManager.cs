@@ -77,4 +77,9 @@ public class TextManager : MonoBehaviour
         isTyping = false;
     }
 
+    public void ClearText()
+    {
+        textBubble.text = "";
+    }
+
 }

@@ -643,7 +643,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1238548294
 RectTransform:
   m_ObjectHideFlags: 0
@@ -775,11 +775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e165500881359942b1fe41499da6661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBubble: {fileID: 541582960}
-  bottomText: {fileID: 1238548295}
   typingSpeed: 0.05
   waitTime: 2
   isClicked: 0
+  textBubble: {fileID: 541582960}
+  bottomText: {fileID: 1238548295}
 --- !u!4 &1439632398
 Transform:
   m_ObjectHideFlags: 0
@@ -1146,7 +1146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fd6ffdc8f4fbb4f800bb5b578bfa58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Jesus: {fileID: 0}
 --- !u!4 &2029185527
 Transform:
   m_ObjectHideFlags: 0
@@ -1213,6 +1212,42 @@ PrefabInstance:
     - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
       propertyPath: npcName
       value: "Y\xFCce Jesus"
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.size
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[0]
+      value: 'Welcome son, all the paperwork here in the afterlife is jumbled. So
+        what I want from you is to take the residents to their desired floors. If
+        you succeed, I will forgive your sins and will grant you passage to my floor. '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[1]
+      value: 'But keep in mind, some residents are devil. You must identify and evade
+        them They have general traits such as: '
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[2]
+      value: Having pointy ears.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[3]
+      value: Not having matching eyes.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[4]
+      value: Having reversed limbs.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[5]
+      value: Not speaking of holy.
+      objectReference: {fileID: 0}
+    - target: {fileID: 2146204974822385056, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
+      propertyPath: dialogs.Array.data[6]
+      value: 'Obviously, some normal residents can have these traits. So be careful
+        and good luck my son.. '
       objectReference: {fileID: 0}
     - target: {fileID: 4139942412127960232, guid: 548dadac9f2720845bbb6540bb6b0e51, type: 3}
       propertyPath: m_Name
