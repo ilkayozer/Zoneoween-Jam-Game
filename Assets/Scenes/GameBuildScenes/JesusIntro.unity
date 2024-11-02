@@ -775,10 +775,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e165500881359942b1fe41499da6661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  textBubble: {fileID: 0}
-  bottomText: {fileID: 0}
+  textBubble: {fileID: 541582960}
+  bottomText: {fileID: 1238548295}
   typingSpeed: 0.05
   waitTime: 2
+  isClicked: 0
 --- !u!4 &1439632398
 Transform:
   m_ObjectHideFlags: 0
@@ -1145,7 +1146,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c7fd6ffdc8f4fbb4f800bb5b578bfa58, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Doors: {fileID: 656237480}
   Jesus: {fileID: 0}
 --- !u!4 &2029185527
 Transform:
