@@ -4,6 +4,11 @@ using UnityEngine;
 
 public class DoorMovement : MonoBehaviour
 {
+
+    public GameObject leftDoor;
+    public GameObject rightDoor;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -14,5 +19,15 @@ public class DoorMovement : MonoBehaviour
     void Update()
     {
         
+    }
+
+    void Close()
+    {
+        
+    }
+
+    void Open()
+    {
+
     }
 }
