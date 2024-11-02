@@ -27,6 +27,6 @@ public class NpcManager : MonoBehaviour
                 return dialogs[index] + "\n\n";
             }
             return dialogs[index] + "\n\n";
-        return string.Empty;
+        
     }
 }

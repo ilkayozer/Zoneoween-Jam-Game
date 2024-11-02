@@ -9,9 +9,11 @@ public class TextManager : MonoBehaviour
     public float typingSpeed = 0.05f;
     public float waitTime = 2f;
     public bool isClicked = false;
+    public bool isIntro = false;
 
     public TMP_Text textBubble;
     public Button bottomText;
+
 
     private TMP_Text textManager;
     private Button buttonManager;
@@ -29,7 +31,11 @@ public class TextManager : MonoBehaviour
         //if (npcObject != null)
         //    npcManager = npcObject.GetComponent<NpcManager>();
         buttonManager.onClick.AddListener(OnBottomTextClicked);
-        StartCoroutine(Sequence());
+
+        if (!isIntro)
+        {
+            StartCoroutine(Sequence());
+        }
     }
 
     public void OnBottomTextClicked()
@@ -48,10 +54,16 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator Sequence()
     {
-        float x = GetTypeingTime(0) + 2.5f;
-        yield return new WaitForSeconds(x);
+        Debug.Log(isIntro);
+        if (!isIntro)
+        {
+            float x = GetTypeingTime(0) + 2.5f;
+            yield return new WaitForSeconds(x);
 
-        buttonManager.gameObject.SetActive(true);
+            buttonManager.gameObject.SetActive(true);
+        }
+
+        
     }
 
     public float GetTypeingTime(int dialogIndex)

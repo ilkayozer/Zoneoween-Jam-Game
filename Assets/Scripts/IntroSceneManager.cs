@@ -1,21 +1,35 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class IntroSceneManager : MonoBehaviour
 {
+    public Button IntroButton;
+
+    private Button nextSceneButton;
     private float duration;
     private DoorMovement doorManager;
     private TextManager textManager;
     // Start is called before the first frame update
+
+    private void Awake()
+    {
+        textManager = FindAnyObjectByType<TextManager>();
+        textManager.isIntro = true;
+    }
+
     void Start()
     {
+        nextSceneButton = IntroButton.GetComponent<Button>();
         doorManager = FindAnyObjectByType<DoorMovement>();
-        textManager = FindAnyObjectByType<TextManager>();
-
+        
+        
         //Door waiting time
         //float duration = doorManager.doorMoveDistance * doorManager.doorSpeed;
         StartCoroutine(StartSeq(duration));
+
+        
     }
 
     // Update is called once per frame
@@ -56,15 +70,9 @@ public class IntroSceneManager : MonoBehaviour
         doorManager.Close();
 
         textManager.ClearText();
-        //yield return new WaitForSeconds(duration);
-
-        //textManager.ShowNextDialog();
-    }
-
-    /*private IEnumerator Wait(float duration = 2f)
-    {
         yield return new WaitForSeconds(duration);
 
-        textManager.ShowNextDialog();
-    }*/
+        nextSceneButton.gameObject.SetActive(true);
+    }
+
 }
