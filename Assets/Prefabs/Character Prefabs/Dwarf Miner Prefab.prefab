@@ -103,3 +103,4 @@ MonoBehaviour:
   - Hmm, why do you have a scar on your eye?
   - I-It's a battle wound!
   floor: 11
+  isEvil: 1

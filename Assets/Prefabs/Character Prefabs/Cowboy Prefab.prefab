@@ -103,3 +103,4 @@ MonoBehaviour:
   - Are you a follower of god?
   - I am a follower.
   floor: 865
+  isEvil: 1

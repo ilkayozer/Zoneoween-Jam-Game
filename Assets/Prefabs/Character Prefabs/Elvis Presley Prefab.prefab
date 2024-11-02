@@ -103,3 +103,4 @@ MonoBehaviour:
   - Are you a believer?
   - "Somethin\u2019 like that, yeah."
   floor: 9
+  isEvil: 1

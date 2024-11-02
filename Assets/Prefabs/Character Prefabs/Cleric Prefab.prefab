@@ -103,3 +103,4 @@ MonoBehaviour:
   - Is it part of god's plan?
   - Yes, yes, it is all set.
   floor: 12
+  isEvil: 1

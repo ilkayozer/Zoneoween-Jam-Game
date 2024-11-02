@@ -103,3 +103,4 @@ MonoBehaviour:
   - What's in your pocket?
   - Nuthin' at all.
   floor: 97
+  isEvil: 1

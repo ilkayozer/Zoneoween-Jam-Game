@@ -103,3 +103,4 @@ MonoBehaviour:
   - You... don't seem genuine?
   - Appearances can be misleading. I'm him.
   floor: 50
+  isEvil: 1

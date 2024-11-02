@@ -103,3 +103,4 @@ MonoBehaviour:
   - Hold up for a second, are you a man of faith?
   - Hehehe, do I look like I'm not?
   floor: 20
+  isEvil: 1

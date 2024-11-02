@@ -103,3 +103,4 @@ MonoBehaviour:
   - Who is waiting?
   - The one above all.
   floor: 8
+  isEvil: 1

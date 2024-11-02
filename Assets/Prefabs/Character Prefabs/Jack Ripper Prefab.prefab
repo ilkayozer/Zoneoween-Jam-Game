@@ -103,3 +103,4 @@ MonoBehaviour:
   - Boss? Whatever. Can you swear on god?
   - I can.
   floor: 88
+  isEvil: 1
