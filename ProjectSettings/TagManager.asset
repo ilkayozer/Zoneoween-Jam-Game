@@ -11,7 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-  - Elevator Door
+  - 
   - 
   - 
   - 
@@ -38,8 +38,20 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Room Background
+    uniqueID: 1852827637
+    locked: 0
+  - name: Outside Character
+    uniqueID: 1484050171
+    locked: 0
   - name: Elevator Door
     uniqueID: 1895747495
+    locked: 0
+  - name: Elevator
+    uniqueID: 1308558569
+    locked: 0
+  - name: Inside Character
+    uniqueID: 3853405769
     locked: 0
   - name: Default
     uniqueID: 0
