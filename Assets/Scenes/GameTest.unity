@@ -178,7 +178,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895747495
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: 6362610f3cea7994caf83a6f85025814, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -310,7 +310,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 1895747495
-  m_SortingLayer: -1
+  m_SortingLayer: -3
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: d2cf4268254443a459ca13495f755bb1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -488,10 +488,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1e165500881359942b1fe41499da6661, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcObject: {fileID: 1230573360}
   textBubble: {fileID: 1199453744}
   bottomText: {fileID: 910201920}
   typingSpeed: 0.05
+  waitTime: 1
 --- !u!4 &951922611
 Transform:
   m_ObjectHideFlags: 0
@@ -670,7 +670,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28115bdbb02cd584cb4890829089808a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Albino Zenci
+  npcName: Albino Zenci 2
   dialogs:
   - "Sa benim ad\u0131m "
   - Beni al
