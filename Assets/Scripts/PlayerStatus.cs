@@ -6,6 +6,10 @@ public class PlayerStatus : MonoBehaviour
 {
     public int chance = 3;
     public int level = 0;
+
+    public NpcManager npcManager;
+
+
     // Start is called before the first frame update
     void Start()
     {
@@ -17,4 +21,31 @@ public class PlayerStatus : MonoBehaviour
     {
         
     }
+
+    void LetInChar()
+    {
+        npcManager = FindAnyObjectByType<NpcManager>();
+        if (npcManager.isEvil)
+        {
+            chance -= 1;
+        }
+        else
+        {
+            level += 1;
+        }
+    }
+
+    void DenyChar()
+    {
+        npcManager = FindAnyObjectByType<NpcManager>();
+        if(!npcManager.isEvil)
+        {
+            chance -= 1;
+        }
+        else
+        {
+            level += 1;
+        }
+    }
+
 }
