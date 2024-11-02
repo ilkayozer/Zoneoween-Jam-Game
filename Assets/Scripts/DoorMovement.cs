@@ -1,33 +1,58 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoorMovement : MonoBehaviour
 {
-
     public GameObject leftDoor;
     public GameObject rightDoor;
 
+    public float doorMoveDistance = 2.0f; // Adjust the distance to move each door
+    public float doorSpeed = 1.0f; // Adjust the speed of the door movement
 
-    // Start is called before the first frame update
+    private Vector3 leftDoorClosedPos;
+    private Vector3 leftDoorOpenPos;
+    private Vector3 rightDoorClosedPos;
+    private Vector3 rightDoorOpenPos;
+
+    private bool isOpening = false;
+    private float lerpTime = 0f;
+
     void Start()
     {
-        
+        // Set the closed positions to the doors' initial positions
+        leftDoorClosedPos = leftDoor.transform.position;
+        rightDoorClosedPos = rightDoor.transform.position;
+
+        // Calculate the target open positions based on the door width
+        leftDoorOpenPos = leftDoorClosedPos + Vector3.left * doorMoveDistance;
+        rightDoorOpenPos = rightDoorClosedPos + Vector3.right * doorMoveDistance;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        
+        if (isOpening)
+        {
+            lerpTime += Time.deltaTime * doorSpeed;
+            leftDoor.transform.position = Vector3.Lerp(leftDoorClosedPos, leftDoorOpenPos, lerpTime);
+            rightDoor.transform.position = Vector3.Lerp(rightDoorClosedPos, rightDoorOpenPos, lerpTime);
+
+            if (lerpTime >= 1f)
+            {
+                lerpTime = 0f;
+                isOpening = false;
+            }
+        }
     }
 
-    void Close()
+    public void Open()
     {
-        
+        isOpening = true;
     }
 
-    void Open()
+    public void Close()
     {
-
+        isOpening = false;
+        leftDoor.transform.position = leftDoorClosedPos;
+        rightDoor.transform.position = rightDoorClosedPos;
     }
 }
