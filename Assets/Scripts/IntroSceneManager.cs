@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class IntroSceneManager : MonoBehaviour
 {
-    public GameObject Jesus;
-
     private float duration;
     private DoorMovement doorManager;
     private TextManager textManager;
