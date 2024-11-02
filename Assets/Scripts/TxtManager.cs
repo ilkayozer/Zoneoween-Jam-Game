@@ -1,28 +1,35 @@
 using System.Collections;
 using TMPro;
+using UnityEditor.EditorTools;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TextManager : MonoBehaviour
 {
-    public TMP_Text textBubble;
-    public Button bottomText;
     public float typingSpeed = 0.05f;
     public float waitTime = 2f;
     public bool isClicked = false;
 
+    public TMP_Text textBubble;
+    public Button bottomText;
+
+    private TMP_Text textManager;
+    private Button buttonManager;
     private NpcManager npcManager;
     private int dialogIndex = 0;
     private bool isTyping = false;
 
     void Start()
     {
+        //bottomText = FindAnyObjectByType<Button>();
+        textManager = textBubble.GetComponent<TMP_Text>();
+        buttonManager = bottomText.GetComponent<Button>();
         npcManager = FindAnyObjectByType<NpcManager>();
 
         //if (npcObject != null)
         //    npcManager = npcObject.GetComponent<NpcManager>();
-        bottomText.onClick.AddListener(OnBottomTextClicked);
-
+        buttonManager.onClick.AddListener(OnBottomTextClicked);
+        StartCoroutine(Sequence());
     }
 
     public void OnBottomTextClicked()
@@ -31,12 +38,20 @@ public class TextManager : MonoBehaviour
         {
             ShowNextDialog();
 
-            Destroy(bottomText.gameObject);
+            Destroy(buttonManager.gameObject);
             isClicked = true;
 
             //StartCoroutine(Wait(waitTime));
 
         }
+    }
+
+    private IEnumerator Sequence()
+    {
+        float x = GetTypeingTime(0) + 2.5f;
+        yield return new WaitForSeconds(x);
+
+        buttonManager.gameObject.SetActive(true);
     }
 
     public float GetTypeingTime(int dialogIndex)
@@ -49,12 +64,6 @@ public class TextManager : MonoBehaviour
     {
         StartCoroutine(TypeText(npcManager.GetDialog(dialogIndex)));
         dialogIndex++;
-    }
-
-    private IEnumerator Wait(float waitTime)
-    {
-        yield return new WaitForSeconds(waitTime);
-        ShowNextDialog();
     }
 
     private IEnumerator TypeText(string newText)
