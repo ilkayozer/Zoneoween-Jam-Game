@@ -10,7 +10,7 @@ public class QuickTimeEvent : MonoBehaviour
     public TMP_Text timerText; // Text component for the timer display
 
     private string targetWord; // Current target word
-    private float timeLimit = 3.5f; // Time limit in seconds for each word
+    public float timeLimit = 5f; // Time limit in seconds for each word
     private float timer; // Countdown timer
     private bool isQTEActive = false; // To check if QTE is active
 
