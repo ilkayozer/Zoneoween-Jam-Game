@@ -1,18 +1,36 @@
 using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
-public class OnElevator : MonoBehaviour
+public class CharacterMover : MonoBehaviour
 {
-    // Start is called before the first frame update
+    private Vector3 targetPosition = new Vector3(-6, -2, 0); // Hardcoded to ensure it moves to the correct position
+    public float moveDuration = 3.0f; // Time in seconds for the movement to complete
+
     void Start()
     {
-        
+        // Set the capsule's initial position to (0, 0, 0)
+        transform.position = new Vector3(0, 0, 0);
+
+        // Start the movement coroutine to move to the target position
+        StartCoroutine(MoveToPosition(targetPosition, moveDuration));
     }
 
-    // Update is called once per frame
-    void Update()
+    private IEnumerator MoveToPosition(Vector3 target, float duration)
     {
-        
+        Vector3 start = transform.position;
+        float elapsed = 0;
+
+        while (elapsed < duration)
+        {
+            // Interpolate position from start to target based on elapsed time
+            transform.position = Vector3.Lerp(start, target, elapsed / duration);
+            elapsed += Time.deltaTime;
+            yield return null;
+        }
+
+        // Ensure the object ends up exactly at the target position
+        transform.position = target;
+        Debug.Log("Final position: " + transform.position); // Log final position to confirm
     }
 }
+
