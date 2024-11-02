@@ -15,6 +15,7 @@ public class DoorMovement : MonoBehaviour
     private Vector3 rightDoorOpenPos;
 
     private bool isOpening = false;
+    private bool isClosing = false;
     private float lerpTime = 0f;
 
     void Start()
@@ -38,8 +39,20 @@ public class DoorMovement : MonoBehaviour
 
             if (lerpTime >= 1f)
             {
-                lerpTime = 0f;
+                lerpTime = 1f; // Ensure it doesn’t exceed 1
                 isOpening = false;
+            }
+        }
+        else if (isClosing)
+        {
+            lerpTime -= Time.deltaTime * doorSpeed;
+            leftDoor.transform.position = Vector3.Lerp(leftDoorClosedPos, leftDoorOpenPos, lerpTime);
+            rightDoor.transform.position = Vector3.Lerp(rightDoorClosedPos, rightDoorOpenPos, lerpTime);
+
+            if (lerpTime <= 0f)
+            {
+                lerpTime = 0f; // Ensure it doesn’t go below 0
+                isClosing = false;
             }
         }
     }
@@ -47,12 +60,14 @@ public class DoorMovement : MonoBehaviour
     public void Open()
     {
         isOpening = true;
+        isClosing = false; // Stop closing if it’s in progress
+        lerpTime = 0f; // Reset lerpTime for opening
     }
 
     public void Close()
     {
-        isOpening = false;
-        leftDoor.transform.position = leftDoorClosedPos;
-        rightDoor.transform.position = rightDoorClosedPos;
+        isClosing = true;
+        isOpening = false; // Stop opening if it’s in progress
+        lerpTime = 1f; // Set lerpTime to 1 to start from the open position
     }
 }
