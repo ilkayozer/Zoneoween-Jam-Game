@@ -5,8 +5,8 @@ using UnityEngine;
 public class NpcManager : MonoBehaviour
 {
     // Start is called before the first frame update
-    public string npcName = "Albino Zenci";
-    public string[] dialogs = { "Sa benim adým ", "Beni al", "tþk aþko <3" };
+    public string npcName;
+    public string[] dialogs;
     public int floor;
 
     void Start()
