@@ -10,7 +10,9 @@ public class TextManager : MonoBehaviour
     public float waitTime = 2f;
     public bool isClicked = false;
     public bool isIntro = false;
+    public bool isDialogOver = false;
 
+    public TMP_Text ButtonText;
     public TMP_Text textBubble;
     public Button bottomText;
 
@@ -26,6 +28,7 @@ public class TextManager : MonoBehaviour
         //bottomText = FindAnyObjectByType<Button>();
         textManager = textBubble.GetComponent<TMP_Text>();
         buttonManager = bottomText.GetComponent<Button>();
+        ButtonText= ButtonText.GetComponent<TMP_Text>();
         npcManager = FindAnyObjectByType<NpcManager>();
 
         //if (npcObject != null)
@@ -47,9 +50,18 @@ public class TextManager : MonoBehaviour
             Destroy(buttonManager.gameObject);
             isClicked = true;
 
-            //StartCoroutine(Wait(waitTime));
+            StartCoroutine(Wait());
 
         }
+    }
+
+    private IEnumerator Wait()
+    {
+
+        float x = GetTypeingTime(1);
+        yield return new WaitForSeconds(x);
+        ShowNextDialog();
+        isDialogOver = true;
     }
 
     private IEnumerator Sequence()
@@ -59,7 +71,10 @@ public class TextManager : MonoBehaviour
             float x = GetTypeingTime(0) + 3.5f;
             yield return new WaitForSeconds(x);
 
+            /*Text buttonText = buttonManager.GetComponentInChildren<Text>();
+            buttonText.text = npcManager.GetDialog(1);*/
             buttonManager.gameObject.SetActive(true);
+            ButtonText.text = npcManager.GetDialog(1);
         }
 
         

@@ -34,6 +34,9 @@ public class GameplaySceneController : MonoBehaviour
         yield return new WaitForSeconds(2f);
 
         TextManager.ShowNextDialog();
+        yield return new WaitForSeconds(TextManager.GetTypeingTime(2));
+        
+
         yield return new WaitForSeconds(TextManager.GetTypeingTime(0));
 
     }
