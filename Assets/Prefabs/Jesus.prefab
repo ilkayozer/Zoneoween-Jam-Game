@@ -44,9 +44,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28115bdbb02cd584cb4890829089808a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  npcName: Jesus
+  npcName: "Y\xFCce Jesus"
   dialogs:
-  - Ben
-  - -Merhaba Jesus Usta
-  - "+G\xF6revini yap gari."
+  - 'Welcome son, all the paperwork here in the afterlife is jumbled. So what I want
+    from you is to take the residents to their desired floors. If you succeed, I
+    will forgive your sins and will grant you passage to my floor. '
+  - 'But keep in mind, some residents are devil. You must identify and evade them
+    They have general traits such as: '
+  - Having pointy ears.
+  - Not having matching eyes.
+  - Having reversed limbs.
+  - Not speaking of holy.
+  - 'Obviously, some normal residents can have these traits. So be careful and good
+    luck my son.. '
   floor: 999
