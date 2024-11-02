@@ -27,6 +27,8 @@ public class DoorMovement : MonoBehaviour
         // Calculate the target open positions based on the door width
         leftDoorOpenPos = leftDoorClosedPos + Vector3.left * doorMoveDistance;
         rightDoorOpenPos = rightDoorClosedPos + Vector3.right * doorMoveDistance;
+
+        StartCoroutine(test());
     }
 
     void Update()
@@ -55,6 +57,12 @@ public class DoorMovement : MonoBehaviour
                 isClosing = false;
             }
         }
+    }
+    private IEnumerator test()
+    {
+        Open();
+        yield return new WaitForSeconds(3f);
+        Close();
     }
 
     public void Open()
