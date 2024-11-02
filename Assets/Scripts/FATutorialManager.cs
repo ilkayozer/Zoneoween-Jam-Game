@@ -1,15 +1,18 @@
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor.SearchService;
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
-public class ButtonFunctions : MonoBehaviour
+public class FATutorialManager : MonoBehaviour
 {
+
+    public GameObject fallenAngel;
+    public DoorMovement doorMovement;
+
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        Object.Instantiate(fallenAngel, transform);
     }
 
     // Update is called once per frame
@@ -17,11 +20,4 @@ public class ButtonFunctions : MonoBehaviour
     {
         
     }
-
-    public void GameplayStart()
-    {
-        SceneManager.LoadScene(2);
-    }
-
-
 }
