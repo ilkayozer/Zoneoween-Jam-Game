@@ -216,6 +216,60 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &449040461
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 449040463}
+  - component: {fileID: 449040462}
+  m_Layer: 0
+  m_Name: RandomSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &449040462
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449040461}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: eb5eceb1bebfb264699c9630c07ed6a7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  charPrefabs:
+  - {fileID: 5205074163777490174, guid: d0f030e8b37f06544b6b5d2ba8d2d2fe, type: 3}
+  - {fileID: 6352788617073510075, guid: 59355fb355cf97c44ad635d584023cf6, type: 3}
+  - {fileID: 8161392741849166586, guid: 62163e9981a8de843a5d05143a92e1dd, type: 3}
+  - {fileID: 904677714882817025, guid: f059f0d4d60de09489320a8f882252cc, type: 3}
+  - {fileID: 8444118805564593654, guid: d7d2800acb5873d4696778265a7bdbb3, type: 3}
+  - {fileID: 8601523927384570767, guid: e11aaebf6376acb4f9b9cfb5379f7ece, type: 3}
+  - {fileID: 6852612994809788627, guid: f5074350e3341b143b9a67c66585f089, type: 3}
+  - {fileID: 7385380946271939452, guid: 43a4037d8c471a84aa4512cc565b563e, type: 3}
+  - {fileID: 5527285585714371147, guid: c3379e70a145b644c8cc00cfb0b9a9eb, type: 3}
+--- !u!4 &449040463
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 449040461}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.7999811, y: 0.5637765, z: -9.931245}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &792263156
 GameObject:
   m_ObjectHideFlags: 0
@@ -247,8 +301,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   leftDoor: {fileID: 1033884752}
   rightDoor: {fileID: 1592021618}
-  doorMoveDistance: 2
-  doorSpeed: 1
+  doorMoveDistance: 3.7
+  doorSpeed: 0.6
 --- !u!4 &792263158
 Transform:
   m_ObjectHideFlags: 0
@@ -1221,3 +1275,4 @@ SceneRoots:
   - {fileID: 448633294}
   - {fileID: 14860689}
   - {fileID: 922800275}
+  - {fileID: 449040463}

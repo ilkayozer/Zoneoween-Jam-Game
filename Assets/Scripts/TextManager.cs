@@ -54,10 +54,9 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator Sequence()
     {
-        Debug.Log(isIntro);
         if (!isIntro)
         {
-            float x = GetTypeingTime(0) + 2.5f;
+            float x = GetTypeingTime(0) + 3.5f;
             yield return new WaitForSeconds(x);
 
             buttonManager.gameObject.SetActive(true);
