@@ -105,3 +105,4 @@ MonoBehaviour:
   - I am grateful.
   floor: 85
   isEvil: 0
+  elevatorInSprite: {fileID: 21300000, guid: d800c7df59be13247b2229bc0a349690, type: 3}

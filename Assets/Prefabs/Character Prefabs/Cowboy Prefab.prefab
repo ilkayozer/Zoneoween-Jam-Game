@@ -105,3 +105,4 @@ MonoBehaviour:
   - of death...
   floor: 865
   isEvil: 1
+  elevatorInSprite: {fileID: 21300000, guid: de4208d2c984bcf489ae1ed5dde49313, type: 3}

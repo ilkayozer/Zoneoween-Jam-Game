@@ -105,3 +105,4 @@ MonoBehaviour:
   - Okay.
   floor: 25
   isEvil: 0
+  elevatorInSprite: {fileID: 21300000, guid: 0f16f8c579e53194ebb1a3c39abcdb70, type: 3}

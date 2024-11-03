@@ -105,3 +105,4 @@ MonoBehaviour:
   - You moron.
   floor: 50
   isEvil: 1
+  elevatorInSprite: {fileID: 21300000, guid: 0a5597fdc879075459f7717cefbac886, type: 3}

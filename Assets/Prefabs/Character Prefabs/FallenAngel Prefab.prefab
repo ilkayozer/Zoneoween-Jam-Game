@@ -105,3 +105,4 @@ MonoBehaviour:
   - Pity.
   floor: 8
   isEvil: 1
+  elevatorInSprite: {fileID: 21300000, guid: a749c04c7f2a9074dad4f4ab96304d66, type: 3}
