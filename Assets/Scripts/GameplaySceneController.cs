@@ -14,6 +14,7 @@ public class GameplaySceneController : MonoBehaviour
     public QuickTimeEvent QuickTimeEvent;
 
     public Button AlarmButton;
+    public AudioSource alarmSound;
 
     public AudioSource doorOpenSound;
     public AudioSource doorCloseSound;
@@ -57,7 +58,7 @@ public class GameplaySceneController : MonoBehaviour
 
         TextManager.ShowNextDialog();
         Debug.Log("ilk dialog");
-        yield return new WaitForSeconds(TextManager.GetTypeingTime(2));
+        yield return new WaitForSeconds(TextManager.GetTypeingTime(2) + 1f);
         while (!(PlayerStats.isDenied || PlayerStats.isLetIn))
         {
             yield return new WaitForSeconds(1f); // Tuþ basýlana kadar bekliyor (ÇALIÞIYO)
@@ -86,12 +87,14 @@ public class GameplaySceneController : MonoBehaviour
 
         if (!npcManager.isEvil)
         {
+            alarmSound.Play();
             AlarmButton.gameObject.SetActive(true);
             QuickTimeEvent.isButtonShowed = true;
             while (QuickTimeEvent.isButtonShowed)
             {
                 yield return new WaitForSeconds(1f);
             }
+            alarmSound.Stop();
             AlarmButton.gameObject.SetActive(false);
 
 
@@ -121,12 +124,14 @@ public class GameplaySceneController : MonoBehaviour
 
         if (npcManager.isEvil)
         {
+            alarmSound.Play();
             AlarmButton.gameObject.SetActive(true);
             QuickTimeEvent.isButtonShowed = true;
             while (QuickTimeEvent.isButtonShowed)
             {
                 yield return new WaitForSeconds(1f);
             }
+            alarmSound.Stop();
             AlarmButton.gameObject.SetActive(false);
         }
 

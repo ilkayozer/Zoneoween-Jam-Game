@@ -10,6 +10,9 @@ public class ReminderController : MonoBehaviour
     public GameObject reminderOpenButton;
     public GameObject reminderSheet;
 
+    public AudioSource reminderSheetOpenSound;
+    public AudioSource reminderSheetCloseSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -24,6 +27,7 @@ public class ReminderController : MonoBehaviour
 
     public void ReminderSheetOpen()
     {
+
         reminderSheet.SetActive(true);
         reminderOpenButton.SetActive(false);
     }

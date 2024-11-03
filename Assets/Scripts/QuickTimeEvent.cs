@@ -17,6 +17,8 @@ public class QuickTimeEvent : MonoBehaviour
     private float timer; // Countdown timer
     private bool isQTEActive = false; // To check if QTE is active
 
+    public AudioSource qteSound;
+
     public bool isButtonShowed = false;
 
     private string[] sentences = {
@@ -40,7 +42,7 @@ public class QuickTimeEvent : MonoBehaviour
 
     public void StartQuickTimeEvent()
     {
-
+        
         if (playerStatus.chance >= 1) // Only start QTE if more than 1 chance is left
         {
 
@@ -104,6 +106,7 @@ public class QuickTimeEvent : MonoBehaviour
         Debug.Log("Success!");
 
         isButtonShowed = false;
+        
     }
 
     private void FailQTE()

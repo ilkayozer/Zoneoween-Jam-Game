@@ -104,6 +104,7 @@ public class TextManager : MonoBehaviour
 
     private IEnumerator TypeText(string newText)
     {
+        yield return new WaitForSeconds(0.5f);
         isTyping = true;
         foreach (char letter in newText.ToCharArray())
         {
