@@ -16,6 +16,8 @@ public class PlayerStatus : MonoBehaviour
     public Button letInButton;
     public Button denyButton;
 
+    public SpriteRenderer charSpriteRenderer;
+    public Sprite charSprite;
 
     // Start is called before the first frame update
     void Start()

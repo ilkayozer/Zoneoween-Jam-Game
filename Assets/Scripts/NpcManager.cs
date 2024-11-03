@@ -12,6 +12,8 @@ public class NpcManager : MonoBehaviour
 
     public bool isEvil;
 
+    public Sprite elevatorInSprite;
+
     void Start()
     {
         
