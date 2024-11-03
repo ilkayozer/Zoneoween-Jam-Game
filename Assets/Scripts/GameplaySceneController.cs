@@ -118,7 +118,7 @@ public class GameplaySceneController : MonoBehaviour
 
         if (PlayerStats.isWon) //Win Condition
         {
-            
+            SceneManager.LoadScene(4);
         }
         else
         {

@@ -56,13 +56,13 @@ public class IntroSceneManager : MonoBehaviour
         textManager.ShowNextDialog();
         yield return new WaitForSeconds(textManager.GetTypeingTime(1)+1f);
         textManager.ShowNextDialog();
-        yield return new WaitForSeconds(textManager.GetTypeingTime(2) + 0.5f);
+        yield return new WaitForSeconds(textManager.GetTypeingTime(2) + 1f);
         textManager.ShowNextDialog();
-        yield return new WaitForSeconds(textManager.GetTypeingTime(3) + 0.5f);
+        yield return new WaitForSeconds(textManager.GetTypeingTime(3) + 1f);
         textManager.ShowNextDialog();
-        yield return new WaitForSeconds(textManager.GetTypeingTime(4) + 0.5f);
+        yield return new WaitForSeconds(textManager.GetTypeingTime(4) + 1f);
         textManager.ShowNextDialog();
-        yield return new WaitForSeconds(textManager.GetTypeingTime(5) + 0.5f);
+        yield return new WaitForSeconds(textManager.GetTypeingTime(5) + 1f);
         textManager.ClearText();
 
         textManager.ShowNextDialog();
