@@ -35,10 +35,30 @@ public class GameplaySceneController : MonoBehaviour
 
         TextManager.ShowNextDialog();
         yield return new WaitForSeconds(TextManager.GetTypeingTime(2));
-        
+        while (!(PlayerStats.isDenied || PlayerStats.isLetIn))
+        {
+            yield return new WaitForSeconds(1f); // Tuþ basýlana kadar bekliyor (ÇALIÞIYO)
+        }
+        if(PlayerStats.isDenied)
+        {
+            StartCoroutine(DenyOption());
+        } else if(PlayerStats.isLetIn)
+        {
+            StartCoroutine(LetInOption());
+        }
+    }
+    private IEnumerator DenyOption()
+    {
+        DoorManager.Close();
+        //1 kat yukarý gidicek her türlü, yanlýþsa asansör kapýlarý kapalý durucak ve quicktime a giricek, doðruysa yarra.
+        yield return new WaitForSeconds(1f); //placeholder to code to work, return gerekiyor
 
-        yield return new WaitForSeconds(TextManager.GetTypeingTime(0));
+    }
 
+    private IEnumerator LetInOption()
+    {
+        //içeri gircek, doðruysa üstte inicek (baþka sequence a), yanlýþ ise eleman yok olucak ve quick time event olucak.
+        yield return new WaitForSeconds(1f); //placeholder to code to work, return gerekiyor
     }
 
     private IEnumerator Wait(float duration)

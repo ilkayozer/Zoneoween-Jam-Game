@@ -7,6 +7,8 @@ public class PlayerStatus : MonoBehaviour
 {
     public int chance = 3;
     public int level = 0;
+    public bool isDenied = false;
+    public bool isLetIn = false;
 
     public NpcManager npcManager;
     public TextManager textManager;
@@ -43,7 +45,7 @@ public class PlayerStatus : MonoBehaviour
         denyButton.gameObject.SetActive(false);
     }
 
-    void LetInChar()
+    public void LetInChar()
     {
         npcManager = FindAnyObjectByType<NpcManager>();
         if (npcManager.isEvil)
@@ -55,9 +57,11 @@ public class PlayerStatus : MonoBehaviour
             level += 1;
         }
         textManager.isDialogOver = false;
+        isLetIn = true;
+        buttonDeactives();
     }
 
-    void DenyChar()
+    public void DenyChar()
     {
         npcManager = FindAnyObjectByType<NpcManager>();
         if(!npcManager.isEvil)
@@ -69,6 +73,8 @@ public class PlayerStatus : MonoBehaviour
             level += 1;
         }
         textManager.isDialogOver = false;
+        isDenied = true;
+        buttonDeactives();
     }
 
 }
