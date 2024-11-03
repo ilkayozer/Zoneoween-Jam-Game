@@ -50,6 +50,16 @@ public class TextManager : MonoBehaviour
         }
     }
 
+    public void nextDiyalog()
+    {
+        ShowNextDialog();
+
+        buttonManager.gameObject.SetActive(false);
+        isClicked = true;
+
+        StartCoroutine(Wait());
+    }
+
     private IEnumerator Wait()
     {
 
