@@ -56,11 +56,12 @@ public class DoorMovement : MonoBehaviour
             }
         }
     }
-    private IEnumerator test()
+    public IEnumerator WaitOpen()
     {
-        Open();
-        yield return new WaitForSeconds(3f);
-        Close();
+        isOpening = true;
+        isClosing = false; // Stop closing if it’s in progress
+        lerpTime = 0f; // Reset lerpTime for opening
+        yield return new WaitForSeconds(doorMoveDistance * doorSpeed);
     }
 
     public void Open()

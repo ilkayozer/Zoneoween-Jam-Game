@@ -34,11 +34,6 @@ public class TextManager : MonoBehaviour
         //if (npcObject != null)
         //    npcManager = npcObject.GetComponent<NpcManager>();
         buttonManager.onClick.AddListener(OnBottomTextClicked);
-
-        if (!isIntro)
-        {
-            StartCoroutine(Sequence());
-        }
     }
 
     public void OnBottomTextClicked()
@@ -47,7 +42,7 @@ public class TextManager : MonoBehaviour
         {
             ShowNextDialog();
 
-            Destroy(buttonManager.gameObject);
+            buttonManager.gameObject.SetActive(false);
             isClicked = true;
 
             StartCoroutine(Wait());
@@ -60,6 +55,7 @@ public class TextManager : MonoBehaviour
 
         float x = GetTypeingTime(1);
         yield return new WaitForSeconds(x);
+        npcManager = FindAnyObjectByType<NpcManager>();
         ShowNextDialog();
         isDialogOver = true;
     }
@@ -68,7 +64,7 @@ public class TextManager : MonoBehaviour
     {
         if (!isIntro)
         {
-            float x = GetTypeingTime(0) + 3.5f;
+            float x = GetTypeingTime(0);
             yield return new WaitForSeconds(x);
 
             /*Text buttonText = buttonManager.GetComponentInChildren<Text>();
@@ -88,8 +84,13 @@ public class TextManager : MonoBehaviour
 
     public void ShowNextDialog()
     {
+        npcManager = FindAnyObjectByType<NpcManager>();
         StartCoroutine(TypeText(npcManager.GetDialog(dialogIndex)));
         dialogIndex++;
+        if (!isIntro && (dialogIndex == 1))
+        {
+            StartCoroutine(Sequence());
+        }
     }
 
     private IEnumerator TypeText(string newText)
@@ -106,6 +107,11 @@ public class TextManager : MonoBehaviour
     public void ClearText()
     {
         textBubble.text = "";
+    }
+
+    public void ClearDialogIndex()
+    {
+        dialogIndex = 0;
     }
 
 }
