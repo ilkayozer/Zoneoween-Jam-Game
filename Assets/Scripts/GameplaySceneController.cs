@@ -15,6 +15,11 @@ public class GameplaySceneController : MonoBehaviour
 
     public Button AlarmButton;
 
+    public AudioSource doorOpenSound;
+    public AudioSource doorCloseSound;
+
+    //public AudioSource elevatorMoveSound;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -38,12 +43,16 @@ public class GameplaySceneController : MonoBehaviour
         TextManager.ClearText();
         TextManager.ClearDialogIndex();
         Spawner.SelectRandomChar();
+
         StartCoroutine(Routine());
+       
     }
     private IEnumerator Routine()
     {
+        
         yield return new WaitForSeconds(1f);
         DoorManager.Open();
+        doorOpenSound.Play();
         yield return new WaitForSeconds(DoorManager.doorMoveDistance * DoorManager.doorSpeed);
 
         TextManager.ShowNextDialog();
@@ -68,7 +77,11 @@ public class GameplaySceneController : MonoBehaviour
     {
         TextManager.ClearText();
         DoorManager.Close();
+        doorCloseSound.Play();
         yield return new WaitForSeconds(DoorManager.doorSpeed * DoorManager.doorMoveDistance + 1f);
+
+        
+
         npcManager = FindAnyObjectByType<NpcManager>();
 
         if (!npcManager.isEvil)
@@ -99,7 +112,11 @@ public class GameplaySceneController : MonoBehaviour
         Debug.Log("LetIn");
         TextManager.ClearText();
         DoorManager.Close();
+        doorCloseSound.Play();
         yield return new WaitForSeconds(DoorManager.doorSpeed * DoorManager.doorMoveDistance + 1f);
+
+       
+
         npcManager = FindAnyObjectByType<NpcManager>();
 
         if (npcManager.isEvil)

@@ -11,6 +11,9 @@ public class IntroSceneManager : MonoBehaviour
     private float duration;
     private DoorMovement doorManager;
     private TextManager textManager;
+
+    public AudioSource doorOpenSound;
+    public AudioSource doorCloseSound;
     // Start is called before the first frame update
 
     private void Awake()
@@ -40,6 +43,7 @@ public class IntroSceneManager : MonoBehaviour
     private IEnumerator StartSeq(float duration)
     {
         doorManager.Open();
+        doorOpenSound.Play();
         duration = doorManager.doorMoveDistance * doorManager.doorSpeed;
 
         yield return new WaitForSeconds(duration);
@@ -68,6 +72,7 @@ public class IntroSceneManager : MonoBehaviour
         textManager.ShowNextDialog();
         yield return new WaitForSeconds(textManager.GetTypeingTime(6) + 1.5f);
         doorManager.Close();
+        doorCloseSound.Play();
 
         textManager.ClearText();
         yield return new WaitForSeconds(duration);
