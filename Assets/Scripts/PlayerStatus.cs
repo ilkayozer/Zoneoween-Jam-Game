@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class PlayerStatus : MonoBehaviour
@@ -9,6 +10,7 @@ public class PlayerStatus : MonoBehaviour
     public int level = 0;
     public bool isDenied = false;
     public bool isLetIn = false;
+    public bool isWon = false;
 
     public NpcManager npcManager;
     public TextManager textManager;
@@ -31,6 +33,17 @@ public class PlayerStatus : MonoBehaviour
         if(textManager.isDialogOver)
         {
             buttonActives();
+        }
+
+        if(chance <= 0)
+        {
+            SceneManager.LoadScene(3);
+        }
+
+        if (level == 10)
+        {
+            level++;
+            isWon = true;
         }
     
     }

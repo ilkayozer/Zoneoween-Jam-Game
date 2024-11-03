@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class QuickTimeEvent : MonoBehaviour
 {
@@ -113,10 +114,7 @@ public class QuickTimeEvent : MonoBehaviour
         qtePanel.SetActive(false); // Hide the QTE panel on failure
         Debug.Log("Failed! Game Over.");
 
-        if (playerStatus.chance <= 1)
-        {
-            ShowGameOver(); // Show game over if chances are 1 or less
-        }
+        SceneManager.LoadScene(3);
 
         isButtonShowed = false;
     }

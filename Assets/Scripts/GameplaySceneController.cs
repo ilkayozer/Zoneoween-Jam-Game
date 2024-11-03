@@ -84,8 +84,14 @@ public class GameplaySceneController : MonoBehaviour
 
 
         }
-        Debug.Log("Deny");
-        RoutineStarter();
+        if (PlayerStats.isWon) //Win Condition
+        {
+
+        } else
+        {
+            Debug.Log("Deny");
+            RoutineStarter();
+        }
     }
 
     private IEnumerator LetInOption()
@@ -105,14 +111,20 @@ public class GameplaySceneController : MonoBehaviour
                 yield return new WaitForSeconds(1f);
             }
             AlarmButton.gameObject.SetActive(false);
-
-
-
         }
 
         //içeri gircek, doðruysa üstte inicek (baþka sequence a), yanlýþ ise eleman yok olucak ve quick time event olucak.
         //yield return new WaitForSeconds(5f); //placeholder to code to work, return gerekiyor
-        RoutineStarter();
+
+        if (PlayerStats.isWon) //Win Condition
+        {
+            
+        }
+        else
+        {
+            Debug.Log("LetIn");
+            RoutineStarter();
+        }
     }
 
     private IEnumerator Wait(float duration)

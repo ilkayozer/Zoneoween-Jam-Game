@@ -893,7 +893,7 @@ Transform:
   m_GameObject: {fileID: 792263156}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -10}
+  m_LocalPosition: {x: 0, y: 0.09, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -934,6 +934,7 @@ MonoBehaviour:
   level: 0
   isDenied: 0
   isLetIn: 0
+  isWon: 0
   npcManager: {fileID: 0}
   textManager: {fileID: 0}
   letInButton: {fileID: 595171773}
