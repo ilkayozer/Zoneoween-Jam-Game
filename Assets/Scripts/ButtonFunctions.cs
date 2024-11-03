@@ -20,7 +20,7 @@ public class ButtonFunctions : MonoBehaviour
 
     public void GameplayStart()
     {
-        SceneManager.LoadScene(2);
+        SceneManager.LoadScene(1);
     }
 
 

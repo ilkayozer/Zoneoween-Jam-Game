@@ -1067,6 +1067,8 @@ MonoBehaviour:
   waitTime: 2
   isClicked: 0
   isIntro: 0
+  isDialogOver: 0
+  ButtonText: {fileID: 1602475329}
   textBubble: {fileID: 541582960}
   bottomText: {fileID: 1238548295}
 --- !u!4 &1439632398
@@ -1858,7 +1860,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1480640527190306458, guid: 222ea97ea27fcb0429ee95891bfba1c8, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -9807.144
+      value: -9150
       objectReference: {fileID: 0}
     - target: {fileID: 1480640527190306458, guid: 222ea97ea27fcb0429ee95891bfba1c8, type: 3}
       propertyPath: m_LocalRotation.w
