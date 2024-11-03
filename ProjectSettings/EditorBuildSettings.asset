@@ -17,7 +17,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/GameBuildScenes/JesusIntroScene.unity
     guid: 2266be3ae36dcc04e8294078772c2fbc
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/GameBuildScenes/GameplayScene.unity
     guid: fab38dd7442b73b479c190ed7957d7b0
   - enabled: 0
@@ -26,6 +26,9 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/GameBuildScenes/GameOverScene.unity
     guid: 8a7429bb16a8c024b816d3c474fb5f04
+  - enabled: 1
+    path: Assets/Scenes/GameBuildScenes/NewGameplayScene.unity
+    guid: 228f25127ed8e5649b6373a5aa89a0fd
   - enabled: 1
     path: Assets/Scenes/GameOverScene.unity
     guid: 1471575dfe3721c4da0b3f1bfa91a43a
