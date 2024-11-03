@@ -1003,7 +1003,7 @@ MonoBehaviour:
   timerText: {fileID: 2002938370}
   gameOverText: {fileID: 2002938367}
   timeLimit: 5
-  isQTEActive: 0
+  isButtonShowed: 0
 --- !u!4 &1160061464
 Transform:
   m_ObjectHideFlags: 0
@@ -1031,7 +1031,7 @@ GameObject:
   - component: {fileID: 1160620101}
   - component: {fileID: 1160620100}
   m_Layer: 5
-  m_Name: Image
+  m_Name: Elevator
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
