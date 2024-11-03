@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameplaySceneController : MonoBehaviour
 {
@@ -8,6 +10,10 @@ public class GameplaySceneController : MonoBehaviour
     private PlayerStatus PlayerStats;
     private CharSelect Spawner;
     private DoorMovement DoorManager;
+    private NpcManager npcManager;
+    private QuickTimeEvent QuickTimeEvent;
+
+    public Button AlarmButton;
 
     // Start is called before the first frame update
     void Start()
@@ -69,8 +75,21 @@ public class GameplaySceneController : MonoBehaviour
     private IEnumerator LetInOption()
     {
         Debug.Log("LetIn");
+        TextManager.ClearText();
+        DoorManager.Close();
+
+        npcManager = FindAnyObjectByType<NpcManager>();
+
+        if (npcManager.isEvil)
+        {
+            AlarmButton.gameObject.SetActive(true);
+            yield return new WaitForSeconds(5f);
+
+            
+        }
+
         //içeri gircek, doðruysa üstte inicek (baþka sequence a), yanlýþ ise eleman yok olucak ve quick time event olucak.
-        yield return new WaitForSeconds(1f); //placeholder to code to work, return gerekiyor
+        yield return new WaitForSeconds(5f); //placeholder to code to work, return gerekiyor
         RoutineStarter();
     }
 

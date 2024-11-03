@@ -50,6 +50,11 @@ public class PlayerStatus : MonoBehaviour
     public void LetInChar()
     {
         npcManager = FindAnyObjectByType<NpcManager>();
+        charSpriteRenderer = npcManager.GetComponent<SpriteRenderer>();
+
+        
+
+
         if (npcManager.isEvil)
         {
             chance -= 1;
@@ -61,6 +66,12 @@ public class PlayerStatus : MonoBehaviour
         textManager.isDialogOver = false;
         isLetIn = true;
         buttonDeactives();
+
+        charSpriteRenderer.sortingLayerName = "Inside Character";
+        charSprite = npcManager.elevatorInSprite;
+        charSpriteRenderer.sprite = charSprite;
+
+        //npcManager.transform.position = new Vector2(transform.position.x - 3, transform.position.y);
     }
 
     public void DenyChar()

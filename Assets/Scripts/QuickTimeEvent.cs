@@ -10,6 +10,7 @@ public class QuickTimeEvent : MonoBehaviour
     public TMP_Text timerText; // Text component for the timer display
     public TMP_Text gameOverText; // Game over text to display when out of chances
 
+
     private string targetWord; // Current target word
     public float timeLimit = 5f; // Time limit in seconds for each word
     private float timer; // Countdown timer
@@ -36,8 +37,10 @@ public class QuickTimeEvent : MonoBehaviour
 
     public void StartQuickTimeEvent()
     {
+
         if (playerStatus.chance > 1) // Only start QTE if more than 1 chance is left
         {
+
             qtePanel.SetActive(true); // Show the QTE panel
             gameOverText.gameObject.SetActive(false); // Hide Game Over text in case it was shown before
             StartNewSentence(); // Display a new sentence
