@@ -39,6 +39,7 @@ public class QuickTimeEvent : MonoBehaviour
         if (playerStatus.chance > 1) // Only start QTE if more than 1 chance is left
         {
             qtePanel.SetActive(true); // Show the QTE panel
+            gameOverText.gameObject.SetActive(false); // Hide Game Over text in case it was shown before
             StartNewSentence(); // Display a new sentence
         }
         else
@@ -104,6 +105,7 @@ public class QuickTimeEvent : MonoBehaviour
         timerText.text = "Time Left: 0.0"; // Show time is up
         qtePanel.SetActive(false); // Hide the QTE panel on failure
         Debug.Log("Failed! Game Over.");
+
         if (playerStatus.chance <= 1)
         {
             ShowGameOver(); // Show game over if chances are 1 or less
