@@ -66,9 +66,24 @@ public class GameplaySceneController : MonoBehaviour
     }
     private IEnumerator DenyOption()
     {
+        TextManager.ClearText();
         DoorManager.Close();
         yield return new WaitForSeconds(DoorManager.doorSpeed * DoorManager.doorMoveDistance + 1f);
-        //1 kat yukarý gidicek her türlü, yanlýþsa asansör kapýlarý kapalý durucak ve quicktime a giricek, doðruysa yarra.
+        npcManager = FindAnyObjectByType<NpcManager>();
+
+        if (!npcManager.isEvil)
+        {
+            AlarmButton.gameObject.SetActive(true);
+            QuickTimeEvent.isButtonShowed = true;
+            while (QuickTimeEvent.isButtonShowed)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+            AlarmButton.gameObject.SetActive(false);
+
+
+
+        }
         Debug.Log("Deny");
         RoutineStarter();
     }
