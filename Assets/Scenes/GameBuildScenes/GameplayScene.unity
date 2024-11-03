@@ -151,6 +151,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0f3097c0ab780804083e827f7ab8ae78, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  QuickTimeEvent: {fileID: 1160061463}
   AlarmButton: {fileID: 1651458506}
 --- !u!4 &14860689
 Transform:
@@ -1002,6 +1003,7 @@ MonoBehaviour:
   timerText: {fileID: 2002938370}
   gameOverText: {fileID: 2002938367}
   timeLimit: 5
+  isQTEActive: 0
 --- !u!4 &1160061464
 Transform:
   m_ObjectHideFlags: 0

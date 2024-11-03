@@ -11,13 +11,14 @@ public class GameplaySceneController : MonoBehaviour
     private CharSelect Spawner;
     private DoorMovement DoorManager;
     private NpcManager npcManager;
-    private QuickTimeEvent QuickTimeEvent;
+    public QuickTimeEvent QuickTimeEvent;
 
     public Button AlarmButton;
 
     // Start is called before the first frame update
     void Start()
     {
+
         DoorManager = FindAnyObjectByType<DoorMovement>();
         Spawner = FindAnyObjectByType<CharSelect>();
         TextManager = FindAnyObjectByType<TextManager>();
@@ -77,19 +78,25 @@ public class GameplaySceneController : MonoBehaviour
         Debug.Log("LetIn");
         TextManager.ClearText();
         DoorManager.Close();
-
+        yield return new WaitForSeconds(DoorManager.doorSpeed * DoorManager.doorMoveDistance + 1f);
         npcManager = FindAnyObjectByType<NpcManager>();
 
         if (npcManager.isEvil)
         {
             AlarmButton.gameObject.SetActive(true);
-            yield return new WaitForSeconds(5f);
+            QuickTimeEvent.isButtonShowed = true;
+            while (QuickTimeEvent.isButtonShowed)
+            {
+                yield return new WaitForSeconds(1f);
+            }
+            AlarmButton.gameObject.SetActive(false);
 
-            
+
+
         }
 
         //içeri gircek, doðruysa üstte inicek (baþka sequence a), yanlýþ ise eleman yok olucak ve quick time event olucak.
-        yield return new WaitForSeconds(5f); //placeholder to code to work, return gerekiyor
+        //yield return new WaitForSeconds(5f); //placeholder to code to work, return gerekiyor
         RoutineStarter();
     }
 

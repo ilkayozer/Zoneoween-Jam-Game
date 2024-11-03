@@ -16,6 +16,8 @@ public class QuickTimeEvent : MonoBehaviour
     private float timer; // Countdown timer
     private bool isQTEActive = false; // To check if QTE is active
 
+    public bool isButtonShowed = false;
+
     private string[] sentences = {
         "God save me",
         "I pray to you",
@@ -38,7 +40,7 @@ public class QuickTimeEvent : MonoBehaviour
     public void StartQuickTimeEvent()
     {
 
-        if (playerStatus.chance > 1) // Only start QTE if more than 1 chance is left
+        if (playerStatus.chance >= 1) // Only start QTE if more than 1 chance is left
         {
 
             qtePanel.SetActive(true); // Show the QTE panel
@@ -99,12 +101,14 @@ public class QuickTimeEvent : MonoBehaviour
         isQTEActive = false;
         qtePanel.SetActive(false); // Hide the QTE panel on success
         Debug.Log("Success!");
+
+        isButtonShowed = false;
     }
 
     private void FailQTE()
     {
         isQTEActive = false;
-        playerStatus.chance -= 1; // Deduct one chance
+        //playerStatus.chance -= 1; // Deduct one chance
         timerText.text = "Time Left: 0.0"; // Show time is up
         qtePanel.SetActive(false); // Hide the QTE panel on failure
         Debug.Log("Failed! Game Over.");
@@ -113,6 +117,8 @@ public class QuickTimeEvent : MonoBehaviour
         {
             ShowGameOver(); // Show game over if chances are 1 or less
         }
+
+        isButtonShowed = false;
     }
 
     private void ShowGameOver()
