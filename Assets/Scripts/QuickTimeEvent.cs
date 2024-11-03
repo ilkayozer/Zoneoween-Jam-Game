@@ -8,6 +8,7 @@ public class QuickTimeEvent : MonoBehaviour
     public TMP_Text targetWordText; // Text component for the target word
     public TMP_InputField playerInputField; // Input field for player input
     public TMP_Text timerText; // Text component for the timer display
+    public TMP_Text gameOverText; // Game over text to display when out of chances
 
     private string targetWord; // Current target word
     public float timeLimit = 5f; // Time limit in seconds for each word
@@ -23,16 +24,27 @@ public class QuickTimeEvent : MonoBehaviour
         "Help me believe"
     };
 
+    private PlayerStatus playerStatus; // Reference to the PlayerStatus script
+
     void Start()
     {
         qtePanel.SetActive(false); // Hide QTE panel initially
+        gameOverText.gameObject.SetActive(false); // Hide Game Over text initially
         playerInputField.onEndEdit.AddListener(CheckPlayerInput); // Check input when player submits
+        playerStatus = FindObjectOfType<PlayerStatus>(); // Find the PlayerStatus component
     }
 
     public void StartQuickTimeEvent()
     {
-        qtePanel.SetActive(true); // Show the QTE panel
-        StartNewSentence(); // Display a new sentence
+        if (playerStatus.chance > 1) // Only start QTE if more than 1 chance is left
+        {
+            qtePanel.SetActive(true); // Show the QTE panel
+            StartNewSentence(); // Display a new sentence
+        }
+        else
+        {
+            ShowGameOver(); // Show game over if only 1 chance is left
+        }
     }
 
     private void StartNewSentence()
@@ -88,11 +100,22 @@ public class QuickTimeEvent : MonoBehaviour
     private void FailQTE()
     {
         isQTEActive = false;
+        playerStatus.chance -= 1; // Deduct one chance
         timerText.text = "Time Left: 0.0"; // Show time is up
         qtePanel.SetActive(false); // Hide the QTE panel on failure
         Debug.Log("Failed! Game Over.");
+        if (playerStatus.chance <= 1)
+        {
+            ShowGameOver(); // Show game over if chances are 1 or less
+        }
+    }
+
+    private void ShowGameOver()
+    {
+        gameOverText.gameObject.SetActive(true); // Display the Game Over text
     }
 }
+
 
 
 
